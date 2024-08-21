@@ -3,176 +3,304 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pavan's AWS Training</title>
+    <title>Pavan's AWS DevOps Institute</title>
     <style>
-        /* Reset default margin and padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        /* Body and general layout */
         body {
             font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            margin: 0;
+            background-color: #f0f2f5;
+            color: #333;
             line-height: 1.6;
         }
-        
-        /* Header */
-        header {
+
+        /* Navbar */
+        nav {
             background-color: #333;
             color: #fff;
-            text-align: center;
-            padding: 15px 0;
-            position: relative;
-            overflow: hidden;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 36px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            z-index: 2;
-        }
-        header::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
             width: 100%;
-            height: 100%;
-            background-color: #111;
-            opacity: 0.5;
-            z-index: 1;
+            z-index: 1000;
         }
-        
-        /* Navigation */
-        nav {
-            background-color: rgba(0, 0, 0, 0.8);
-            text-align: center;
-            padding: 10px 0;
-            position: relative;
-            z-index: 2;
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
         }
-        nav a {
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
             color: #fff;
             text-decoration: none;
-            padding: 10px 15px;
-            display: inline-block;
-            transition: background-color 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
-        nav a:hover {
+
+        nav ul li a:hover {
             background-color: #555;
         }
-        
-        /* Main content container */
-        .container {
-            width: 80%;
-            margin: 20px auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.2);
-            animation: fadeIn 1s ease;
-        }
-        
-        /* Sections */
-        section {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-        section:hover {
-            transform: scale(1.02);
-        }
-        section h2 {
-            margin-bottom: 10px;
-            font-size: 24px;
-            color: #333;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        section p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #666;
-        }
-        section ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        section li {
-            margin-bottom: 8px;
-            color: #555;
-        }
-        
-        /* Footer */
-        footer {
+
+        /* Hero Section */
+        .hero {
+            background: url('https://source.unsplash.com/random/1600x900?cloud,technology') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
             text-align: center;
-            padding: 10px 0;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            animation: heroTextAnimation 5s infinite alternate;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .hero button {
+            padding: 15px 30px;
+            font-size: 18px;
+            border: none;
+            background-color: #e94560;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #f25f78;
+        }
+
+        /* Keyframes */
+        @keyframes heroTextAnimation {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Course Section */
+        .courses {
+            padding: 100px 20px;
+            background-color: #fff;
+        }
+
+        .courses h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .courses .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .courses .course-item {
+            background-color: #f7f7f7;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .courses .course-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .courses .course-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .courses .course-item p {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .courses .course-item button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
             background-color: #333;
             color: #fff;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s;
         }
-        
-        /* Keyframes for animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; transform: translateY(-20px); }
-            100% { opacity: 1; transform: translateY(0); }
+
+        .courses .course-item button:hover {
+            background-color: #555;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 20px;
+            background-color: #16213e;
+            color: #fff;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+        }
+
+        .testimonials .testimonial-item {
+            background-color: #1a1a2e;
+            padding: 20px;
+            margin: 0 20px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .testimonials .testimonial-item p {
+            font-size: 16px;
+            font-style: italic;
+        }
+
+        .testimonials .testimonial-item h3 {
+            font-size: 20px;
+            margin-top: 20px;
+            color: #e94560;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>AWS Training by Pavan</h1>
-    </header>
+
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#courses">Courses</a>
-        <a href="#appointments">Appointments</a>
-        <a href="#contact">Contact</a>
+        <div class="logo">Welcome</div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
     </nav>
-    <div class="container">
-        <section id="home">
-            <h2>Home</h2>
-            <p>Welcome to Pavan's Training academy!</p>
-        </section>
-        <section id="about">
-            <h2>About</h2>
-            <p>Pavan's AWS DevOps training equips professionals with essential skills in cloud automation, CI/CD pipelines, and infrastructure management using AWS services. Perfect for beginners and experienced practitioners alike, this hands-on course prepares you for real-world DevOps challenges and AWS certifications.</p>
-        </section>
-        <section id="courses">
-            <h2>Courses</h2>
-            <ul>
-                <li>AWS Basics</li>
-                <li>Advanced DevOps Techniques</li>
-                <li>Linux Server Management</li>
-            </ul>
-            <p>Check our <a href="#appointments">appointment schedule</a> for course timings.</p>
-        </section>
-        <section id="appointments">
-            <h2>Appointments</h2>
-            <p>To schedule an appointment or inquire about course timings, please contact us via email or phone.</p>
-            <p>Email: pavan.aningi1998@gmail.com</p>
-            <p>Mobile: 9505950521</p>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: pavan.aningi1998@gmail.com</p>
-            <p>Mobile: 9505950521</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/pavan-kalyan-aningi-60590b299/" target="_blank">Pavan Kalyan Aningi</a></p>
-        </section>
-    </div>
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pavan's AWS DevOps Institute</title>
+    <style>
+        /* CSS Styles */
+        #hero {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        #hero button {
+            background-color: white;
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        #hero button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <section id="hero" class="hero">
+        <h1>Pavan's AWS DevOps Institute</h1>
+        <p>Master AWS and DevOps skills with our expert-led courses and certifications.</p>
+        <button>Get Started</button>
+    </section>
+
+</body>
+</html>
+
+
+    <section id="courses" class="courses">
+        <h2>Our Courses</h2>
+        <div class="course-grid">
+            <div class="course-item">
+                <h3>AWS Certified Solutions Architect</h3>
+                <p>Learn how to design, deploy, and operate secure and robust applications on AWS.</p>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-item">
+                <h3>DevOps Engineering on AWS</h3>
+                <p>Master the skills needed to develop, deploy, and maintain applications on AWS.</p>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-item">
+                <h3>AWS Certified Developer</h3>
+                <p>Gain deep knowledge of the core AWS services and learn how to create applications on the AWS platform.</p>
+                <button>Enroll Now</button>
+            </div>
+            <div class="course-item">
+                <h3>AWS Certified SysOps Administrator</h3>
+                <p>Learn how to deploy, manage, and operate scalable, highly available, and fault-tolerant systems on AWS.</p>
+                <button>Enroll Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Students Say</h2>
+        <div class="testimonial-item">
+            <p>"The courses offered at Pavan's AWS DevOps Institute helped me gain the skills I needed to excel in my career. Highly recommended!"</p>
+            <h3>Ramya</h3>
+        </div>
+        <div class="testimonial-item">
+            <p>"The instructors are knowledgeable, and the content is well-structured. I was able to get AWS certified thanks to this institute."</p>
+            <h3>Jyoshna</h3>
+        </div>
+        <div class="testimonial-item">
+            <p>"This is the best place to learn AWS and DevOps. The hands-on labs and real-world examples were particularly helpful."</p>
+            <h3>Pavan</h3>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Pavan. All rights reserved.</p>
+        <p>&copy; 2024 Pavan's AWS DevOps Institute. All Rights Reserved.</p>
     </footer>
+
 </body>
 </html>
