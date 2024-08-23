@@ -290,7 +290,7 @@
         </div>
         <div class="testimonial-item">
             <p>"The instructors are knowledgeable, and the content is well-structured. I was able to get AWS certified thanks to this institute."</p>
-            <h3>Jyoshna</h3>
+            <h3>Sivaji</h3>
         </div>
         <div class="testimonial-item">
             <p>"This is the best place to learn AWS and DevOps. The hands-on labs and real-world examples were particularly helpful."</p>
